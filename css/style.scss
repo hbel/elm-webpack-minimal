@@ -1,30 +1,11 @@
-//
-// To just use the contents of a variable, interpolation can be used:
-// $name: 'Hugo';
-//
-// .foo {
-// content: 'Hello #{$name}!';
-// }
-//
-
-$brand-low: null;
 $brand-low: rgb(50,50,0) !default;
-$brand-high: rgb(0,100,100);
 
 @mixin colorpattern($color) {
     color: lighten($color,20%);
     background-color: darken($color,2%);
 }
 
-#low {
+#main {
     @include colorpattern($brand-low);
 }
 
-#high {
-    @include colorpattern($brand-high);
-}
-
-#mix {
-    color: lighten(mix($brand-high,$brand-low),20%);
-    background-color: mix($brand-low,$brand-high);
-}
