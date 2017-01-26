@@ -1,10 +1,13 @@
 {
-  "name": "elm-min",
+  "name": "elm-webpack-minimal",
   "version": "0.0.1",
   "description": "Minimal environment for using Elm with webpack2",
   "main": "bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server --hot --inline",
+    "reinstall": "npm i && elm package install"
   },
   "keywords": [
     "Elm",
@@ -20,6 +23,7 @@
     "node-sass": "^4.3.0",
     "sass-loader": "^2.0.1",
     "style-loader": "^0.13.1",
-    "webpack": "^2.2.0"
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^1.16.2"
   }
 }
