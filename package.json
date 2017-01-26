@@ -1,0 +1,25 @@
+{
+  "name": "elm-min",
+  "version": "0.0.1",
+  "description": "Minimal environment for using Elm with webpack2",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Elm",
+    "Webpack2"
+  ],
+  "author": "Hendrik Belitz",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.26.1",
+    "elm-hot-loader": "^0.5.4",
+    "elm-webpack-loader": "^4.2.0",
+    "html-webpack-plugin": "^2.26.0",
+    "node-sass": "^4.3.0",
+    "sass-loader": "^2.0.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.0"
+  }
+}
