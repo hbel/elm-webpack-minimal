@@ -5,5 +5,5 @@ Use this as a starting point for building elm frontend applications with webpack
 
  * Initialize with `npm run reinstall`.
  * build the demo project with `npm run build`.
- * Run the webpack dev server with `'npm start`.
+ * Run the webpack dev server with `npm start`.
 

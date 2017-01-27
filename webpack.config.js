@@ -1,7 +1,9 @@
 var path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
-const webpack = require('webpack'); //to access built-in plugins
+const HtmlWebpackPlugin = require('html-webpack-plugin'); 
+const CopyWebpackPlugin = require('copy-webpack-plugin'); 
+const ExtractTextPlugin = require('extract-text-webpack-plugin'); 
+const webpack = require('webpack'); 
 
 module.exports = {
     entry: './js/app.js',
@@ -18,11 +20,11 @@ module.exports = {
                 include: [
                     path.resolve(__dirname, "css")
                 ],
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader',
-                ] 
+                loader: ExtractTextPlugin.extract({
+                    fallbackLoader : 'style-loader',
+                    loader: ['css-loader',
+                            'sass-loader']
+                })                
             },
             {   test: /\.elm$/, 
                 include: [
@@ -37,9 +39,14 @@ module.exports = {
     },    
 
     plugins: [
-        // Das hier geht noch nicht - der mag unser scss nicht
-        // new webpack.optimize.UglifyJsPlugin(),
-        // Gebe ein Template für die HTML-Datei vor
-        new HtmlWebpackPlugin({template: './html/index.html'})
+        new webpack.optimize.UglifyJsPlugin({
+            minimize : true,
+            mangle : true
+        }),
+        new HtmlWebpackPlugin({template: './html/index.html'}),
+        new CopyWebpackPlugin([
+            { from : './img', to: 'img' }
+        ]),
+        new ExtractTextPlugin("style.css")
     ]
 }

@@ -16,9 +16,11 @@
   "author": "Hendrik Belitz",
   "license": "MIT",
   "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.1",
     "elm-hot-loader": "^0.5.4",
     "elm-webpack-loader": "^4.2.0",
+    "extract-text-webpack-plugin": "^2.0.0-rc.0",
     "html-webpack-plugin": "^2.26.0",
     "node-sass": "^4.3.0",
     "sass-loader": "^2.0.1",
