@@ -12,8 +12,6 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
     },
 
-    // Das hier bettet das css im js ein. Das ist für die Ladezeiten natürlich
-    // suboptimal und soll sich wohl durch das Textextract-Plugin ändern lassen
     module: {
         rules: [
             {   test: /\.scss$/, 
